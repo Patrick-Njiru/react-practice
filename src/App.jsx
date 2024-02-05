@@ -19,7 +19,6 @@ const App = () => {
 	const [displayItem2, setDisplayItem2] = useState('d-flex ')
 	const [displayItem3, setDisplayItem3] = useState('d-flex ')
 	const [displayItem4, setDisplayItem4] = useState('d-flex ')
-  // const [disableButton, setDisableButton] = useState(false)
 
 	const handleCountChange = (count, change) => {
 		if (change == '+') {
@@ -48,7 +47,7 @@ const App = () => {
 						Reset
 					</button>
 
-					{/* Row 1 */}
+					{/* Item 1 */}
 					<div 
 						className={displayItem1 + "align-items-start justify-content-between my-3"} 
 						style={styles.width}
@@ -73,12 +72,11 @@ const App = () => {
 
 							<button
 								type='button'
-								className="btn btn-dark py-2 mx-2 fw-bold"
+								className={`btn btn-dark py-2 mx-2 fw-bold + ${count1 == 0 ? ' disabled' : null}`}
 								onClick={() => {
 									count1 > 0 ? setCount1(count1 => count1 -= 1) : null
 									handleCountChange(count1, '-')
 								}} 
-								// disabled = {disableButton}
 							>
 								&minus;
 							</button>
@@ -96,7 +94,7 @@ const App = () => {
 						</div>
 					</div>
 
-					{/* Row 2 */}
+					{/* Item 2 */}
 					<div 
 						className={displayItem2 + "align-items-start justify-content-between my-3"} 
 						style={styles.width}
@@ -121,12 +119,11 @@ const App = () => {
 
 							<button
 								type='button'
-								className="btn btn-dark py-2 mx-2 fw-bold"
+								className={`btn btn-dark py-2 mx-2 fw-bold + ${count2 == 0 ? ' disabled' : null}`}
 								onClick={() => {
 									count2 > 0 ? setCount2(count2 => count2 -= 1) : null
 									handleCountChange(count2, '-')
 								}} 
-								// disabled = {disableButton}
 							>
 								&minus;
 							</button>
@@ -144,7 +141,7 @@ const App = () => {
 						</div>
 					</div>
 
-					{/* Row 3 */}
+					{/* Item 3 */}
 					<div 
 						className={displayItem3 + "align-items-start justify-content-between my-3"} 
 						style={styles.width}
@@ -169,12 +166,11 @@ const App = () => {
 
 							<button
 								type='button'
-								className="btn btn-dark py-2 mx-2 fw-bold"
+								className={`btn btn-dark py-2 mx-2 fw-bold + ${count3 == 0 ? ' disabled' : null}`}
 								onClick={() => {
 									count3 > 0 ? setCount3(count3 => count3 -= 1) : null
 									handleCountChange(count3, '-')
 								}} 
-								// disabled = {disableButton}
 							>
 								&minus;
 							</button>
@@ -192,7 +188,7 @@ const App = () => {
 						</div>
 					</div>
 
-					{/* Row 4 */}
+					{/* Item 4 */}
 					<div 
 						className={displayItem4 + "align-items-start justify-content-between my-3"} 
 						style={styles.width}
@@ -217,12 +213,11 @@ const App = () => {
 
 							<button
 								type='button'
-								className="btn btn-dark py-2 mx-2 fw-bold"
+								className={`btn btn-dark py-2 mx-2 fw-bold + ${count4 == 0 ? ' disabled' : null}`}
 								onClick={() => {
 									count4 > 0 ? setCount4(count4 => count4 -= 1) : null
 									handleCountChange(count4, '-')
 								}} 
-								// disabled = {disableButton}
 							>
 								&minus;
 							</button>
