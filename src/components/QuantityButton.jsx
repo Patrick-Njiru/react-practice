@@ -4,7 +4,7 @@ const QuantityButton = ({
 	count,
 	operation,
 	setCount,
-	handleCountChange,
+	onCountChange,
 }) => (
 	<>
 		{operation == 'add' ?
@@ -13,7 +13,7 @@ const QuantityButton = ({
 				className="btn btn-dark py-2 mx-2 fw-bold"
 				onClick={() => {
 					setCount(count => count += 1)
-					handleCountChange(count, '+')
+					onCountChange(count, '+')
 				}} 
 			>
 				+
@@ -24,7 +24,7 @@ const QuantityButton = ({
 				className={`btn btn-dark py-2 mx-2 fw-bold + ${count == 0 ? ' disabled' : null}`}
 				onClick={() => {
 					count > 0 ? setCount(count => count -= 1) : null
-					handleCountChange(count, '-')
+					onCountChange(count, '-')
 				}} 
 			>
 				&minus;
@@ -39,7 +39,7 @@ QuantityButton.propTypes = {
 	operation: PropTypes.string.isRequired,
 	setCount: PropTypes.func.isRequired,
 	setDisplayItem: PropTypes.func.isRequired,
-	handleCountChange: PropTypes.func.isRequired,
+	onCountChange: PropTypes.func.isRequired,
 }    
 
 export default QuantityButton

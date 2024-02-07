@@ -6,11 +6,11 @@ import DeleteButton from './DeleteButton'
 const CartItem = ({
 	count,
 	setCount,
-	handleCountChange,
+	onCountChange,
 	setDisplayItem
 }) => (
 	<React.Fragment>
-		<div className={"alert fw-bold py-0 px-2 bg-" + count > 0 ? 'primary' : 'warning'}>
+		<div className={"alert fw-bold py-0 px-2 bg-" + `${count > 0 ? 'primary' : 'warning'}`}>
 			{count > 0 ? count : 'Zero'}
 		</div>
 		
@@ -19,20 +19,20 @@ const CartItem = ({
 				count={count}
 				operation='add'
 				setCount={setCount}
-				handleCountChange={handleCountChange}
+				onCountChange={onCountChange}
 			/>
 
 			<QuantityButton
 				count={count}
 				operation='subtract'
 				setCount={setCount}
-				handleCountChange={handleCountChange}
+				onCountChange={onCountChange}
 			/>
 
 			<DeleteButton
 				count={count}
 				setDisplayItem={setDisplayItem}
-				handleCountChange={handleCountChange}
+				onCountChange={onCountChange}
 			/>
 
 		</div>
@@ -43,7 +43,7 @@ const CartItem = ({
 CartItem.propTypes = {
 	count: PropTypes.number.isRequired,
 	setCount: PropTypes.func.isRequired,
-	handleCountChange: PropTypes.func.isRequired,
+	onCountChange: PropTypes.func.isRequired,
 	setDisplayItem: PropTypes.func.isRequired,
 }
 

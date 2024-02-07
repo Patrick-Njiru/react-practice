@@ -56,7 +56,7 @@ const App = () => {
 							<CartItem
 								count={count1}
 								setCount={setCount1}
-								handleCountChange={handleCountChange}
+								onCountChange={handleCountChange}
 								setDisplayItem={setDisplayItem1}
 							/>
 						</li>
@@ -68,7 +68,7 @@ const App = () => {
 							<CartItem
 								count={count2}
 								setCount={setCount2}
-								handleCountChange={handleCountChange}
+								onCountChange={handleCountChange}
 								setDisplayItem={setDisplayItem2}
 							/>
 						</li>
@@ -80,7 +80,7 @@ const App = () => {
 							<CartItem
 								count={count3}
 								setCount={setCount3}
-								handleCountChange={handleCountChange}
+								onCountChange={handleCountChange}
 								setDisplayItem={setDisplayItem3}
 							/>
 						</li>
@@ -92,11 +92,10 @@ const App = () => {
 							<CartItem
 								count={count4}
 								setCount={setCount4}
-								handleCountChange={handleCountChange}
+								onCountChange={handleCountChange}
 								setDisplayItem={setDisplayItem4}
 							/>
 						</li>
-
 					</ul>
 				</div>
 			</div>
