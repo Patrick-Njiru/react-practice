@@ -1,10 +1,11 @@
 import { useState } from 'react'
+import CartItem from './components/CartItem'
 
 
 const styles = {
 	font: {fontFamily: 'sans-serif'},
 	width: {
-		minWidth: '400px', 
+		minWidth: 400, 
 		width: '50vw',
 	},
 }
@@ -27,7 +28,6 @@ const App = () => {
 			count == 1 && itemsCount > 0 ? setItemsCount(itemsCount => itemsCount -= 1) : null
 		}
 	}
-
 
 	return (
 		<div className="w-75" style={styles.font}>
@@ -53,188 +53,50 @@ const App = () => {
 							className={displayItem1 + "list-group-item align-items-start justify-content-between border-0"} 
 							style={styles.width}
 						>
-							{count1 == 0 ? 
-								<div className="alert bg-warning fw-bold py-0 px-2"> Zero </div> 
-								: 
-								<div className="alert bg-primary fw-bold py-0 px-2"> {count1} </div> 
-							}
-
-							<div className="w-75">
-								<button 
-									type='button' 
-									className="btn btn-dark py-2 mx-2 fw-bold"
-									onClick={() => {
-										setCount1(count1 => count1 += 1)
-										handleCountChange(count1, '+')
-									}} 
-								>
-									+
-								</button>
-
-								<button
-									type='button'
-									className={`btn btn-dark py-2 mx-2 fw-bold + ${count1 == 0 ? ' disabled' : null}`}
-									onClick={() => {
-										count1 > 0 ? setCount1(count1 => count1 -= 1) : null
-										handleCountChange(count1, '-')
-									}} 
-								>
-									&minus;
-								</button>
-
-								<button
-									type='button' 
-									className="btn btn-danger py-2 mx-2 fw-bold"
-									onClick={() => {
-										setDisplayItem1('d-none ')
-										count1 > 0 ? handleCountChange(1, '-') : null
-									}}
-								>
-									Delete
-								</button>
-							</div>
+							<CartItem
+								count={count1}
+								setCount={setCount1}
+								handleCountChange={handleCountChange}
+								setDisplayItem={setDisplayItem1}
+							/>
 						</li>
-
 						{/* Item 2 */}
 						<li 
 							className={displayItem2 + "list-group-item align-items-start justify-content-between border-0"} 
 							style={styles.width}
 						>
-							{count2 == 0 ? 
-								<div className="alert bg-warning fw-bold py-0 px-2"> Zero </div> 
-								: 
-								<div className="alert bg-primary fw-bold py-0 px-2"> {count2} </div> 
-							}
-
-							<div className="w-75">
-								<button 
-									type='button' 
-									className="btn btn-dark py-2 mx-2 fw-bold"
-									onClick={() => {
-										setCount2(count2 => count2 += 1)
-										handleCountChange(count2, '+')
-									}} 
-								>
-									+
-								</button>
-
-								<button
-									type='button'
-									className={`btn btn-dark py-2 mx-2 fw-bold + ${count2 == 0 ? ' disabled' : null}`}
-									onClick={() => {
-										count2 > 0 ? setCount2(count2 => count2 -= 1) : null
-										handleCountChange(count2, '-')
-									}} 
-								>
-									&minus;
-								</button>
-
-								<button 
-									type='button'
-									className="btn btn-danger py-2 mx-2 fw-bold"
-									onClick={() => {
-										setDisplayItem2('d-none ')
-										count2 > 0 ? handleCountChange(1, '-') : null
-									}}
-								>
-									Delete
-								</button>
-							</div>
+							<CartItem
+								count={count2}
+								setCount={setCount2}
+								handleCountChange={handleCountChange}
+								setDisplayItem={setDisplayItem2}
+							/>
 						</li>
-
 						{/* Item 3 */}
 						<li 
 							className={displayItem3 + "list-group-item align-items-start justify-content-between border-0"} 
 							style={styles.width}
 						>
-							{count3 == 0 ? 
-								<div className="alert bg-warning fw-bold py-0 px-2"> Zero </div> 
-								: 
-								<div className="alert bg-primary fw-bold py-0 px-2"> {count3} </div> 
-							}
-
-							<div className="w-75">
-								<button 
-									type='button' 
-									className="btn btn-dark py-2 mx-2 fw-bold"
-									onClick={() => {
-										setCount3(count3 => count3 += 1)
-										handleCountChange(count3, '+')
-									}} 
-								>
-									+
-								</button>
-
-								<button
-									type='button'
-									className={`btn btn-dark py-2 mx-2 fw-bold + ${count3 == 0 ? ' disabled' : null}`}
-									onClick={() => {
-										count3 > 0 ? setCount3(count3 => count3 -= 1) : null
-										handleCountChange(count3, '-')
-									}} 
-								>
-									&minus;
-								</button>
-
-								<button
-									type='button' 
-									className="btn btn-danger py-2 mx-2 fw-bold"
-									onClick={() => {
-										setDisplayItem3('d-none ')
-										count3 > 0 ? handleCountChange(1, '-') : null
-									}}
-								>
-									Delete
-								</button>
-							</div>
+							<CartItem
+								count={count3}
+								setCount={setCount3}
+								handleCountChange={handleCountChange}
+								setDisplayItem={setDisplayItem3}
+							/>
 						</li>
-
 						{/* Item 4 */}
 						<li 
 							className={displayItem4 + "list-group-item align-items-start justify-content-between border-0"} 
 							style={styles.width}
 						>
-							{count4 == 0 ? 
-								<div className="alert bg-warning fw-bold py-0 px-2"> Zero </div> 
-								: 
-								<div className="alert bg-primary fw-bold py-0 px-2"> {count4} </div> 
-							}
-
-							<div className="w-75">
-								<button 
-									type='button' 
-									className="btn btn-dark py-2 mx-2 fw-bold"
-									onClick={() => {
-										setCount4(count4 => count4 += 1)
-										handleCountChange(count4, '+')
-									}} 
-								>
-									+
-								</button>
-
-								<button
-									type='button'
-									className={`btn btn-dark py-2 mx-2 fw-bold + ${count4 == 0 ? ' disabled' : null}`}
-									onClick={() => {
-										count4 > 0 ? setCount4(count4 => count4 -= 1) : null
-										handleCountChange(count4, '-')
-									}} 
-								>
-									&minus;
-								</button>
-
-								<button 
-									type='button'
-									className="btn btn-danger py-2 mx-2 fw-bold"
-									onClick={() => {
-										setDisplayItem4('d-none ')
-										count1 > 0 ? handleCountChange(1, '-') : null
-									}}
-								>
-									Delete
-								</button>
-							</div>
+							<CartItem
+								count={count4}
+								setCount={setCount4}
+								handleCountChange={handleCountChange}
+								setDisplayItem={setDisplayItem4}
+							/>
 						</li>
+
 					</ul>
 				</div>
 			</div>
