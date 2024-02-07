@@ -12,7 +12,7 @@ const QuantityButton = ({
 				type='button' 
 				className="btn btn-dark py-2 mx-2 fw-bold"
 				onClick={() => {
-					setCount(count => count += 1)
+					setCount(count + 1)
 					onCountChange(count, '+')
 				}} 
 			>
@@ -23,7 +23,7 @@ const QuantityButton = ({
 				type='button'
 				className={`btn btn-dark py-2 mx-2 fw-bold + ${count == 0 ? ' disabled' : null}`}
 				onClick={() => {
-					count > 0 ? setCount(count => count -= 1) : null
+					count > 0 ? setCount(count - 1) : null
 					onCountChange(count, '-')
 				}} 
 			>

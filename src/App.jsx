@@ -23,9 +23,9 @@ const App = () => {
 
 	const handleCountChange = (count, change) => {
 		if (change == '+') {
-			count == 0 ? setItemsCount(itemsCount => itemsCount += 1) : null
+			count == 0 ? setItemsCount(itemsCount + 1) : null
 		} else {
-			count == 1 && itemsCount > 0 ? setItemsCount(itemsCount => itemsCount -= 1) : null
+			count == 1 && itemsCount > 0 ? setItemsCount(itemsCount - 1) : null
 		}
 	}
 
